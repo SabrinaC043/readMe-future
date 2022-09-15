@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = ('./ut')
+
+const generateMarkdown = ('')
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -84,18 +86,28 @@ const questions = [
 inquirer.prompt(questions).then((data) =>
     console.log(data)
     // take responses and write to a txt file 
+     fs.writeFile('index.txt', data, (err) => {
+        if (err) {
+            console.log(err)
+            throw err;
+        } else {
+            console.log("File written successfully!/n");
+            console.log(data.toString())
+            console.log(fs.readFile('books.txt', 'utf8'))
+        }
 
-)
-
+    }
 
     //     type/;
 
 
 //     // TODO: Create a function to write README file
-//     function writeToFile(fileName, data) { }
+//    function writeToFile(fileName, data) { 
+
+//    }
 
 // // TODO: Create a function to initialize app
 // function init() { }
 
 // // Function call to initialize app
-// init();
+// init()
