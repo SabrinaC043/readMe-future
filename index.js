@@ -83,31 +83,21 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions).then((data) =>
+inquirer.prompt(questions).then((data) => {
     console.log(data)
+})
+fs.writeFile('./index.txt', data, (err) => {
+    if (err) throw err;
+    console.log('The file has been saved!');
+});
+
     // take responses and write to a txt file 
-     fs.writeFile('index.txt', data, (err) => {
-        if (err) {
-            console.log(err)
-            throw err;
-        } else {
-            console.log("File written successfully!/n");
-            console.log(data.toString())
-            console.log(fs.readFile('books.txt', 'utf8'))
-        }
-
-    }
-
-    //     type/;
-
-
-//     // TODO: Create a function to write README file
-//    function writeToFile(fileName, data) { 
-
-//    }
-
-// // TODO: Create a function to initialize app
-// function init() { }
-
-// // Function call to initialize app
-// init()
+    // fs.writeFile('index.txt', process.argv[2], (err) => {
+        // if (err) {
+        //     console.log(err);
+        // } else {
+        //     console.log("File written successfully!/n");
+        //     console.log(data.toString());
+        //     console.log("The written has the following contents:Answers");
+        //     console.log(fs.readFileSync('index.txt', 'utf8'))
+        // }
