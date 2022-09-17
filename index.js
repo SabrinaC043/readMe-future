@@ -50,10 +50,15 @@ const questions = [
         message: "How does one install dependencies in your project?",
     },
     {
+        type: 'input',
+        name: "usage",
+        message: "How does one use this application?",
+    },
+    {
         type: 'list',
-        name: "Licenes",
+        name: 'license',
         message: "Will you be using any licenses?",
-        choices: ['Mozilla', 'Apache', 'MIT', 'GNU']
+        choices: ['Mozilla', 'Apache', 'MIT', 'GNU', 'No License']
     },
     {
         type: 'input',
